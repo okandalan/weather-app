@@ -38,6 +38,6 @@ main{
 }
 
 .btn-submit,
-.searchInput {
+#cityInput {
     padding: 10px 5px;
 }
