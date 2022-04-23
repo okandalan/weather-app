@@ -1,12 +1,6 @@
 function getInput() {
     const inputForm = document.getElementById("cityInput");
     const city = inputForm.value;
-
-    /* regex kullanarak whitespaceleri felan temizle */
-    if (!city) {
-        return '';
-    }
-
     return city;
 }
 
@@ -24,6 +18,7 @@ const weather = ( () => {
             weather: {'0': {main : weatherCondition}},
             wind: {speed: windSpeed}
         } = data
+
 
         let {
             temp,
