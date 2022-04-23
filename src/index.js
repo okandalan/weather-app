@@ -12,7 +12,9 @@ searchBtn.addEventListener('click', async function ()  {
     if (city) {
         console.log(city);
         const data = await weather.getData(city);
-        console.log(data);        
+        if (typeof data === 'string') {
+            console.log(data);        
+        }
     }
 
 })

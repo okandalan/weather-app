@@ -41,7 +41,15 @@ const weather = ( () => {
     }
 
     async function getData (city){
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=177eb24cf9e5c8ddad2b2fed130150dd`, {mode : 'cors'});
+        try {
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=177eb24cf9e5c8ddad2b2fed130150dd`, {mode : 'cors'});
+            if (!response.ok) {
+                throw new Error(`City is not found! Please check your spelling.`);
+            }
+        }
+        catch (err) {
+            return err.message;
+        }
         let data = await response.json();
         data = processData(data);
         return data;

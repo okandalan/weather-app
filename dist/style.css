@@ -1,5 +1,6 @@
 :root{
     --header-bg: #1e293b;
+    --result-bg: #1e293b;
     --main-bg: #64748b;
 }
 
@@ -40,4 +41,37 @@ main{
 .btn-submit,
 #cityInput {
     padding: 10px 5px;
+}
+
+.resultContainer {
+   /*  display: none; */
+   margin-top: 50px;
+   padding: 30px;
+   background-color: var(--result-bg);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 400px;
+   gap: 20px;
+}
+
+.weatherTempContainer {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 10px;
+}
+
+.weatherPropertiesContainer {
+    display: flex;
+    gap: 30px;
+    text-align: center;
+}
+
+.propertyContainer {
+    display: flex;
+}
+
+.active {
+    display: block;
 }
