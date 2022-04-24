@@ -1,4 +1,5 @@
 import { getInput, weather } from "./modules/weatherapp";
+import setResult  from "./modules/domFunctions";
 
 const searchBtn = document.querySelector('.btn-submit');
 const form = document.querySelector('.searchForm');
@@ -9,12 +10,11 @@ form.addEventListener('submit', (e) => {
 
 searchBtn.addEventListener('click', async function ()  {
     const city = getInput();
+    /* buraya gelen input string mi onu kontrol etme ekle  */
     if (city) {
         console.log(city);
         const data = await weather.getData(city);
-        if (typeof data === 'string') {
-            console.log(data);        
-        }
+        setResult(data);
     }
 
 })

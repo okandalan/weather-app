@@ -15,15 +15,13 @@ const weather = ( () => {
         const {
             name: city,
             main: {humidity},
-            weather: {'0': {main : weatherCondition}},
+            weather: {'0': {description : weatherCondition}},
             wind: {speed: windSpeed}
         } = data
 
 
         let {
             temp,
-            temp_min:  minTemp,
-            temp_max: maxTemp,
             feels_like: feelsLike,
                         
         } = data.main
@@ -33,8 +31,6 @@ const weather = ( () => {
             humidity,
             weatherCondition,
             temp: roundAfterOneDigit(temp),
-            minTemp: roundAfterOneDigit(minTemp),
-            maxTemp: roundAfterOneDigit(maxTemp),
             feelsLike: roundAfterOneDigit(feelsLike),
             windSpeed
         };
@@ -46,13 +42,14 @@ const weather = ( () => {
             if (!response.ok) {
                 throw new Error(`City is not found! Please check your spelling.`);
             }
+            let data = await response.json();
+            data = processData(data);
+            return data;            
         }
         catch (err) {
             return err.message;
         }
-        let data = await response.json();
-        data = processData(data);
-        return data;
+
     }
 
     return {getData};
