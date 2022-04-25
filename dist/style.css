@@ -1,7 +1,8 @@
 :root{
-    --header-bg: #1e293b;
-    --result-bg: #1e293b;
-    --main-bg: #64748b;
+    --header-bg: #475569;
+    --result-bg: #475569;
+    --main-bg: #94a3b8;
+    --text-color: white;
 }
 
 *,
@@ -13,10 +14,30 @@
 }
 
 body {
+    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
     display: grid;
     grid-template-rows: 1fr 4fr;
-    color: white;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+#errorMessage {
+    margin-top: 15px;
+    color: var(--header-bg);
+    font-weight:900;
+    font-size: 1.3rem;
 }
 
 header{
@@ -38,10 +59,28 @@ main{
     margin-top: 30px;
 }
 
+.btn-submit:hover,
+#cityInput:focus {
+    color: var(--text-color);
+    background-color: var(--header-bg);
+}
+
+.btn-submit:active {
+    opacity: 0.5;
+}
+
 .btn-submit,
 #cityInput {
-    padding: 10px 5px;
+    padding: 12px 10px;
+    border-radius: 10px;
+    border: none;
 }
+
+#cityInput {
+    width: 250px;
+    margin-right: 10px;
+}
+
 
 .resultContainer {
     margin-top: 50px;
@@ -51,7 +90,9 @@ main{
     flex-direction: column;
     align-items: center;
     height: 400px;
+    width: 600px;
     gap: 20px;
+    border-radius: 10px;
 }
 
 .showHide {
@@ -70,6 +111,15 @@ main{
     gap: 10px;
 }
 
+#weatherCondition {
+    height: 120px;
+    width:  120px;
+}
+
+#temp {
+    font-size: 2.2rem;
+}
+
 .weatherPropertiesContainer {
     display: flex;
     gap: 30px;
@@ -78,10 +128,19 @@ main{
 
 .propertyContainer {
     display: flex;
+    width: 170px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.propertyImg {
+    width: 60px;
+    height: 60px;
+}
+
+.property {
+    margin-bottom: 10px;
 }
 
 
-#weatherCondition {
-    width: 100px;
-    height: 100px;
-}
