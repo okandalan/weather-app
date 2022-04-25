@@ -10,11 +10,17 @@ form.addEventListener('submit', (e) => {
 
 searchBtn.addEventListener('click', async function ()  {
     const city = getInput();
-    /* buraya gelen input string mi onu kontrol etme ekle  */
     if (city) {
         console.log(city);
         const data = await weather.getData(city);
-        setResult(data);
+        if (typeof data === 'string') {
+            const errorMessage = document.getElementById("errorMessage");
+            errorMessage.textContent = data;
+        }
+        else {
+            errorMessage.textContent = '';
+            setResult(data);
+        }       
     }
 
 })

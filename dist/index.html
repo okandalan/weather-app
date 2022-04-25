@@ -18,35 +18,38 @@
             <input type="text"  id="cityInput" name="cityInput" placeholder="Enter city name">
             <button class="btn-submit" type="submit">Search</button>
         </form>
-        <div class="resultContainer ">
-            <h2 id="cityName">Ankara</h2>
-            <div class="weatherTempContainer">
-                <p id="weatherCondition"></p>
-                <p id="temp">26</p>
-            </div>
-            <div class="weatherPropertiesContainer">
-                <div class="propertyContainer">
-                    <img src="" alt="feels-like">
-                    <div>
-                        <p class="properity">Feels Like</p>
-                        <p id="feelsLike">35</p>
+        <p id="errorMessage"></p>
+        <div class="showHide">
+            <div class="resultContainer ">
+                <h2 id="cityName">Ankara</h2>
+                <div class="weatherTempContainer">
+                    <img id="weatherCondition" src="" alt="weather-condition">
+                    <p id="temp">26</p>
+                </div>
+                <div class="weatherPropertiesContainer">
+                    <div class="propertyContainer ">
+                        <img class="propertyImg feelsLike" src="" alt="feels-like">
+                        <div>
+                            <p class="properity">Feels Like</p>
+                            <p id="feelsLike">35</p>
+                        </div>
+                    </div>
+                    <div class="propertyContainer " >
+                        <img class="propertyImg windSpeed" src="" alt="wing-speed">
+                        <div>
+                            <p class="property">Wind Speed</p>
+                            <p id="windSpeed">35</p>
+                        </div>
+                    </div>
+                    <div class="propertyContainer">
+                        <img class="propertyImg humidity" src="" alt="humidity">
+                        <div>
+                            <p class="properity">Humidty</p>
+                            <p id="humidity">35</p>
+                        </div>
                     </div>
                 </div>
-                <div class="propertyContainer">
-                    <img src="" alt="wing-speed">
-                    <div>
-                        <p class="property">Wind Speed</p>
-                        <p id="windSpeed">35</p>
-                    </div>
-                </div>
-                <div class="propertyContainer">
-                    <img src="" alt="humidity">
-                    <div>
-                        <p class="properity">Humidty</p>
-                        <p id="humidity">35</p>
-                    </div>
-                </div>                
-            </div>
+        </div>
         </div>
     </main>
 
