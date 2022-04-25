@@ -3,6 +3,7 @@ import fewClouds from '../assets/fewclouds.png';
 import mist from '../assets/mist.png';
 import rain from '../assets/rain.png';
 import brokenClouds from '../assets/brokenclouds.png';
+import scatteredClouds from '../assets/scatteredclouds.png';
 import showerRain from '../assets/showerrain.png';
 import thunderStrom from '../assets/thunderstrom.png';
 import humidityImg from '../assets/humidity.png';
@@ -23,10 +24,9 @@ document.querySelector(".windSpeed").src = windSpeedImg;
 document.querySelector(".humidity").src = humidityImg;
 
 
-const weatherConditions = [clearSky, fewClouds, mist, rain, brokenClouds, showerRain, thunderStrom];
+const weatherConditions = [clearSky, fewClouds, mist, rain, brokenClouds, showerRain, thunderStrom, scatteredClouds];
 function setResult (data) {
     const weatherConditionNoWhiteSpace = data.weatherCondition.replace(/\s+/g, '');
-    console.log(weatherConditionNoWhiteSpace);
     weatherConditions.forEach((condition) => {
         if (condition.includes(weatherConditionNoWhiteSpace)) {
             weatherCondition.src = condition;

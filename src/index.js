@@ -11,7 +11,6 @@ form.addEventListener('submit', (e) => {
 searchBtn.addEventListener('click', async function ()  {
     const city = getInput();
     if (city) {
-        console.log(city);
         const data = await weather.getData(city);
         if (typeof data === 'string') {
             const errorMessage = document.getElementById("errorMessage");
