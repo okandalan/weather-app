@@ -8,8 +8,4 @@ module.exports = merge(common, {
   devServer: {
       static: './dist',
   },
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
 });
