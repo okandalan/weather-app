@@ -65,6 +65,10 @@ main{
     background-color: var(--header-bg);
 }
 
+#cityInput:focus::placeholder {
+    color: var(--text-color);
+}
+
 .btn-submit:active {
     opacity: 0.5;
 }
